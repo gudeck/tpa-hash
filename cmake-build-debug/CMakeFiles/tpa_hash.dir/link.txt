@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/tpa_hash.dir/main.c.o CMakeFiles/tpa_hash.dir/Funcoes.c.o CMakeFiles/tpa_hash.dir/ListaClientes.c.o  -o tpa_hash 
