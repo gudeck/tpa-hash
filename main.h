@@ -29,15 +29,14 @@ typedef struct {
     ItemCliente *clientes;
 } HashClientes;
 
-HashClientes * getHashAberto(FILE *arquivo);
+HashClientes *getHashAberto(FILE *arquivo);
 
-HashClientes * getHashFechado(FILE *arquivo);
+HashClientes *getHashFechado(FILE *arquivo);
 
 void removeCaractere(char *string, char caractere);
 
 void inserirDivisao(HashClientes *clientes, ItemCliente *novoCliente);
 
 void inserirDobra(HashClientes *clientes, ItemCliente *novoCliente);
-
 
 #endif //TPA_HASH_MAIN_H

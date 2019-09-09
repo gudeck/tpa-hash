@@ -28,9 +28,17 @@ Envie aqui o arquivo fonte (.c) contendo o código do seu
  trabalho e o relatório do trabalho compactados em um arquivo zip.*/
 
 int main(int argc, char *argv[]) {
-    HashClientes *dados = (HashClientes *) malloc(1 * sizeof(HashClientes));
-    dados->clientes = (ItemCliente *) malloc(500 * sizeof(ItemCliente));
-    printf("%n %n", sizeof(dados) / sizeof(HashClientes), sizeof(dados) / sizeof(HashClientes));
+
+    HashClientes *hash = (HashClientes *) calloc(1, sizeof(HashClientes));
+    hash->clientes = (ItemCliente *) calloc(25, sizeof(ItemCliente));
+
+    hash->clientes[24].cliente = (Cliente *) calloc(1, sizeof(Cliente));
+    printf(" %p\n", &hash->clientes[20000]);
+
+//    for (int i = 0; i < 25; ++i) {
+//        printf(" %x\n", &hash->clientes[i]);
+//    }
+
 //    setlocale(LC_ALL, NULL);
 //
 //    FILE *arquivo;
