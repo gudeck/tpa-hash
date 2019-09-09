@@ -3,6 +3,4 @@ project(tpa_hash C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(tpa_hash main.c Cliente.h
-        Funcoes.h ListaClientes.h
-        Funcoes.c ListaClientes.c)
+add_executable(tpa_hash main.c main.h)

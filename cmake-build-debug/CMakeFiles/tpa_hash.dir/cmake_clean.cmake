@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tpa_hash.dir/main.c.o"
-  "CMakeFiles/tpa_hash.dir/Funcoes.c.o"
-  "CMakeFiles/tpa_hash.dir/ListaClientes.c.o"
+  "CMakeFiles/tpa_hash.dir/main.c.obj"
   "tpa_hash.pdb"
-  "tpa_hash"
+  "tpa_hash.exe"
+  "tpa_hash.exe.manifest"
+  "libtpa_hash.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,4 +1,16 @@
-/snap/clion/82/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/gudeck/CLionProjects/tpa-hash
+C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\2017122760013\CLionProjects\tpa-hash
 -- Configuring done
--- Generating done
--- Build files have been written to: /home/gudeck/CLionProjects/tpa-hash/cmake-build-debug
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    Cliente.h
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: tpa_hash
+
+
+-- Build files have been written to: C:/Users/2017122760013/CLionProjects/tpa-hash/cmake-build-debug

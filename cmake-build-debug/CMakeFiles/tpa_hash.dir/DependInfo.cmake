@@ -4,9 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/gudeck/CLionProjects/tpa-hash/Funcoes.c" "/home/gudeck/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/Funcoes.c.o"
-  "/home/gudeck/CLionProjects/tpa-hash/ListaClientes.c" "/home/gudeck/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/ListaClientes.c.o"
-  "/home/gudeck/CLionProjects/tpa-hash/main.c" "/home/gudeck/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/main.c.o"
+  "C:/Users/2017122760013/CLionProjects/tpa-hash/main.c" "C:/Users/2017122760013/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

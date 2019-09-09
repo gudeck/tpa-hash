@@ -6,7 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/gudeck/CLionProjects/tpa-hash/main.c
+C:/Users/2017122760013/CLionProjects/tpa-hash/main.c
+main.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/main.h
+time.h
+-
+locale.h
+-
+
+C:/Users/2017122760013/CLionProjects/tpa-hash/main.h
 stdio.h
+-
+string.h
+-
+stdlib.h
+-
+stdbool.h
 -
 
