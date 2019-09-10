@@ -6,21 +6,31 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/2017122760013/CLionProjects/tpa-hash/main.c
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
 main.h
-C:/Users/2017122760013/CLionProjects/tpa-hash/main.h
-time.h
--
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+main.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+cliente.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
+
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
 locale.h
 -
-
-C:/Users/2017122760013/CLionProjects/tpa-hash/main.h
 stdio.h
--
-string.h
 -
 stdlib.h
 -
+string.h
+-
 stdbool.h
 -
+
+C:/Users/guzuc/CLionProjects/tpa-hash/src/main.c
+headers/main.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+headers/hash.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
 

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tpa_hash.dir/main.c.obj"
+  "CMakeFiles/tpa_hash.dir/src/main.c.obj"
+  "CMakeFiles/tpa_hash.dir/src/hash.c.obj"
+  "CMakeFiles/tpa_hash.dir/src/cliente.c.obj"
   "tpa_hash.pdb"
   "tpa_hash.exe"
   "tpa_hash.exe.manifest"

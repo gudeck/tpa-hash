@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\guzuc\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = C:\Users\guzuc\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\2017122760013\CLionProjects\tpa-hash
+CMAKE_SOURCE_DIR = C:\Users\guzuc\CLionProjects\tpa-hash
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tpa_hash.dir/depend.make
@@ -56,32 +56,62 @@ include CMakeFiles/tpa_hash.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tpa_hash.dir/flags.make
 
-CMakeFiles/tpa_hash.dir/main.c.obj: CMakeFiles/tpa_hash.dir/flags.make
-CMakeFiles/tpa_hash.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tpa_hash.dir/main.c.obj"
-	C:\Users\2017122760013\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tpa_hash.dir\main.c.obj   -c C:\Users\2017122760013\CLionProjects\tpa-hash\main.c
+CMakeFiles/tpa_hash.dir/src/main.c.obj: CMakeFiles/tpa_hash.dir/flags.make
+CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tpa_hash.dir/src/main.c.obj"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tpa_hash.dir\src\main.c.obj   -c C:\Users\guzuc\CLionProjects\tpa-hash\src\main.c
 
-CMakeFiles/tpa_hash.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tpa_hash.dir/main.c.i"
-	C:\Users\2017122760013\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\2017122760013\CLionProjects\tpa-hash\main.c > CMakeFiles\tpa_hash.dir\main.c.i
+CMakeFiles/tpa_hash.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tpa_hash.dir/src/main.c.i"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guzuc\CLionProjects\tpa-hash\src\main.c > CMakeFiles\tpa_hash.dir\src\main.c.i
 
-CMakeFiles/tpa_hash.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tpa_hash.dir/main.c.s"
-	C:\Users\2017122760013\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\2017122760013\CLionProjects\tpa-hash\main.c -o CMakeFiles\tpa_hash.dir\main.c.s
+CMakeFiles/tpa_hash.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tpa_hash.dir/src/main.c.s"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guzuc\CLionProjects\tpa-hash\src\main.c -o CMakeFiles\tpa_hash.dir\src\main.c.s
+
+CMakeFiles/tpa_hash.dir/src/hash.c.obj: CMakeFiles/tpa_hash.dir/flags.make
+CMakeFiles/tpa_hash.dir/src/hash.c.obj: ../src/hash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tpa_hash.dir/src/hash.c.obj"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tpa_hash.dir\src\hash.c.obj   -c C:\Users\guzuc\CLionProjects\tpa-hash\src\hash.c
+
+CMakeFiles/tpa_hash.dir/src/hash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tpa_hash.dir/src/hash.c.i"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guzuc\CLionProjects\tpa-hash\src\hash.c > CMakeFiles\tpa_hash.dir\src\hash.c.i
+
+CMakeFiles/tpa_hash.dir/src/hash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tpa_hash.dir/src/hash.c.s"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guzuc\CLionProjects\tpa-hash\src\hash.c -o CMakeFiles\tpa_hash.dir\src\hash.c.s
+
+CMakeFiles/tpa_hash.dir/src/cliente.c.obj: CMakeFiles/tpa_hash.dir/flags.make
+CMakeFiles/tpa_hash.dir/src/cliente.c.obj: ../src/cliente.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/tpa_hash.dir/src/cliente.c.obj"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\tpa_hash.dir\src\cliente.c.obj   -c C:\Users\guzuc\CLionProjects\tpa-hash\src\cliente.c
+
+CMakeFiles/tpa_hash.dir/src/cliente.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tpa_hash.dir/src/cliente.c.i"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guzuc\CLionProjects\tpa-hash\src\cliente.c > CMakeFiles\tpa_hash.dir\src\cliente.c.i
+
+CMakeFiles/tpa_hash.dir/src/cliente.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tpa_hash.dir/src/cliente.c.s"
+	C:\Users\guzuc\Desktop\dev_c_cpp\MiniGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guzuc\CLionProjects\tpa-hash\src\cliente.c -o CMakeFiles\tpa_hash.dir\src\cliente.c.s
 
 # Object files for target tpa_hash
 tpa_hash_OBJECTS = \
-"CMakeFiles/tpa_hash.dir/main.c.obj"
+"CMakeFiles/tpa_hash.dir/src/main.c.obj" \
+"CMakeFiles/tpa_hash.dir/src/hash.c.obj" \
+"CMakeFiles/tpa_hash.dir/src/cliente.c.obj"
 
 # External object files for target tpa_hash
 tpa_hash_EXTERNAL_OBJECTS =
 
-tpa_hash.exe: CMakeFiles/tpa_hash.dir/main.c.obj
+tpa_hash.exe: CMakeFiles/tpa_hash.dir/src/main.c.obj
+tpa_hash.exe: CMakeFiles/tpa_hash.dir/src/hash.c.obj
+tpa_hash.exe: CMakeFiles/tpa_hash.dir/src/cliente.c.obj
 tpa_hash.exe: CMakeFiles/tpa_hash.dir/build.make
 tpa_hash.exe: CMakeFiles/tpa_hash.dir/linklibs.rsp
 tpa_hash.exe: CMakeFiles/tpa_hash.dir/objects1.rsp
 tpa_hash.exe: CMakeFiles/tpa_hash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable tpa_hash.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable tpa_hash.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tpa_hash.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -94,6 +124,6 @@ CMakeFiles/tpa_hash.dir/clean:
 .PHONY : CMakeFiles/tpa_hash.dir/clean
 
 CMakeFiles/tpa_hash.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\2017122760013\CLionProjects\tpa-hash C:\Users\2017122760013\CLionProjects\tpa-hash C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles\tpa_hash.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\guzuc\CLionProjects\tpa-hash C:\Users\guzuc\CLionProjects\tpa-hash C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles\tpa_hash.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tpa_hash.dir/depend
 

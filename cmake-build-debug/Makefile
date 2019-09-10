@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\guzuc\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = C:\Users\guzuc\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\2017122760013\CLionProjects\tpa-hash
+CMAKE_SOURCE_DIR = C:\Users\guzuc\CLionProjects\tpa-hash
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-deb
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	C:\Users\guzuc\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\2017122760013\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\guzuc\Desktop\dev_c_cpp\CLion\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\2017122760013\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\guzuc\CLionProjects\tpa-hash\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,32 +122,86 @@ tpa_hash/fast:
 	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/build
 .PHONY : tpa_hash/fast
 
-main.obj: main.c.obj
+src/cliente.obj: src/cliente.c.obj
 
-.PHONY : main.obj
+.PHONY : src/cliente.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/main.c.obj
-.PHONY : main.c.obj
+src/cliente.c.obj:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/cliente.c.obj
+.PHONY : src/cliente.c.obj
 
-main.i: main.c.i
+src/cliente.i: src/cliente.c.i
 
-.PHONY : main.i
+.PHONY : src/cliente.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/main.c.i
-.PHONY : main.c.i
+src/cliente.c.i:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/cliente.c.i
+.PHONY : src/cliente.c.i
 
-main.s: main.c.s
+src/cliente.s: src/cliente.c.s
 
-.PHONY : main.s
+.PHONY : src/cliente.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/main.c.s
-.PHONY : main.c.s
+src/cliente.c.s:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/cliente.c.s
+.PHONY : src/cliente.c.s
+
+src/hash.obj: src/hash.c.obj
+
+.PHONY : src/hash.obj
+
+# target to build an object file
+src/hash.c.obj:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hash.c.obj
+.PHONY : src/hash.c.obj
+
+src/hash.i: src/hash.c.i
+
+.PHONY : src/hash.i
+
+# target to preprocess a source file
+src/hash.c.i:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hash.c.i
+.PHONY : src/hash.c.i
+
+src/hash.s: src/hash.c.s
+
+.PHONY : src/hash.s
+
+# target to generate assembly for a file
+src/hash.c.s:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hash.c.s
+.PHONY : src/hash.c.s
+
+src/main.obj: src/main.c.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.c.obj:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/main.c.obj
+.PHONY : src/main.c.obj
+
+src/main.i: src/main.c.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.c.i:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/main.c.i
+.PHONY : src/main.c.i
+
+src/main.s: src/main.c.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.c.s:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/main.c.s
+.PHONY : src/main.c.s
 
 # Help Target
 help:
@@ -158,9 +212,15 @@ help:
 	@echo ... tpa_hash
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/cliente.obj
+	@echo ... src/cliente.i
+	@echo ... src/cliente.s
+	@echo ... src/hash.obj
+	@echo ... src/hash.i
+	@echo ... src/hash.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 
