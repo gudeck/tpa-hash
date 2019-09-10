@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/guzuc/CLionProjects/tpa-hash/src/hash.c
+headers/hash.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
 main.h
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h

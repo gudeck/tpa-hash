@@ -27,7 +27,7 @@ int hashDivisao(Cliente *cliente, int tamanho);
 
 int hashDobra(Cliente *cliente, int tamanho);
 
-void inserirFechado(HashClientes *clientes, ItemCliente *novoRegistro, int (*funcao)(Cliente *));
+void inserirFechado(HashClientes *hash, ItemCliente *novoRegistro, int (*funcaoHash)(Cliente *, int));
 
 void inserirAberto(HashClientes *hash, ItemCliente *novoRegistro, int (*funcaoHash)(Cliente *, int));
 

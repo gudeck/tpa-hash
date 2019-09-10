@@ -100,7 +100,33 @@ HashClientes *getHash2(FILE *arquivo) {
 }
 
 HashClientes *getHash3(FILE *arquivo) {
-    return NULL;
+
+    HashClientes *hash = criaHash(500, 0.7);
+    ItemCliente *novoRegistro;
+    Cliente *novoCliente;
+
+    char *codigoString, *nome, *saldoString, linha[99];
+    int codigo;
+    double saldo;
+    while (fgets(linha, 99, arquivo) != NULL) {
+        if (!isAvailable(hash)) {
+            hash = expandeHash(hash, inserirFechado, hashDivisao);
+        }
+
+        codigoString = strtok(linha, "|");
+        nome = strtok(NULL, "|");
+        saldoString = strtok(NULL, "\0");
+
+        codigo = strtol(codigoString, NULL, 10);
+        saldo = strtod(removeCaractere(saldoString, '.'), NULL);
+
+        novoCliente = criaCliente(codigo, nome, saldo);
+        novoRegistro = criaRegistro(novoCliente);
+
+        inserirFechado(hash, novoRegistro, hashDivisao);
+
+    }
+    return hash;
 }
 
 int hashDivisao(Cliente *cliente, int tamanho) {
@@ -126,7 +152,17 @@ void inserirAberto(HashClientes *hash, ItemCliente *novoRegistro, int (*funcaoHa
     hash->ocupado++;
 }
 
-void inserirFechado(HashClientes *clientes, ItemCliente *novoRegistro, int (*funcao)(Cliente *)) {
+void inserirFechado(HashClientes *hash, ItemCliente *novoRegistro, int (*funcaoHash)(Cliente *, int)) {
+
+    int indice = funcaoHash(novoRegistro->cliente, hash->tamanho);
+    ItemCliente *aux = hash->registro[indice];
+
+    while (aux->proximo != NULL && !aux->proximo->excluido) {
+        aux = aux->proximo;
+    }
+
+    hash->registro[indice] = novoRegistro;
+    hash->ocupado++;
 
 }
 
