@@ -8,34 +8,53 @@
 #include "main.h"
 #include "cliente.h"
 
+
 typedef struct {
     int tamanho;
     int ocupado;
     double loadFactor;
     ItemCliente **registro;
-} HashClientes;
+} HashClientes, Hasahd;
+
+typedef int (*FuncaoHash)(ItemCliente *, HashClientes *);
+
+typedef void (*FuncaoInsercao)(HashClientes *, ItemCliente *, FuncaoHash);
+
 
 HashClientes *criaHash(int tamanho, double loadFactor);
 
-HashClientes *getHash1(FILE *arquivo);
+HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
 
-HashClientes *getHash2(FILE *arquivo);
+HashClientes *getHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
 
-HashClientes *getHash3(FILE *arquivo);
+int hashDivisao(ItemCliente *registro, HashClientes *hash);
 
-int hashDivisao(Cliente *cliente, int tamanho);
-
-int hashDobra(Cliente *cliente, int tamanho);
-
-void inserirFechado(HashClientes *hash, ItemCliente *novoRegistro, int (*funcaoHash)(Cliente *, int));
-
-void inserirAberto(HashClientes *hash, ItemCliente *novoRegistro, int (*funcaoHash)(Cliente *, int));
+int hashDobra(ItemCliente *registro, HashClientes hash);
 
 bool isAvailable(HashClientes *hash);
 
-HashClientes *expandeHash(
-        HashClientes *hash,
-        void (*funcaoInsercao)(HashClientes *, ItemCliente *, int (*)(Cliente *, int)),
-        int (*funcaoHash)(Cliente *, int));
+/*
+HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
 
+    HashClientes *novaHash = criaHash(hash->tamanho * 2, hash->loadFactor);
+    ItemCliente *registro;
+    printf("\n\n\n%d ", hash->ocupado);
+    printf("%d %d\n\n\n", hash->tamanho, novaHash->tamanho);
+    for (int i = 0; i < hash->tamanho; ++i) {
+        registro = hash->registro[i];
+        if (registro != NULL) {
+            while (registro != NULL) {
+
+                registro->excluido = false;
+                funcaoInsercao(novaHash, registro, funcaoHash);
+
+                registro = registro->proximo;
+            }
+        }
+
+    }
+
+    free(hash);
+    return novaHash;
+}*/
 #endif //TPA_HASH_HASH_H

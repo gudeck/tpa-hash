@@ -10,8 +10,22 @@ CMakeFiles/tpa_hash.dir/src/hash.c.obj
  C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
  C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
  C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/hashAberto.c
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashAberto.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/hashFechado.c
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
 CMakeFiles/tpa_hash.dir/src/main.c.obj
  C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
  C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashAberto.h
+ C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
  C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
  C:/Users/guzuc/CLionProjects/tpa-hash/src/main.c

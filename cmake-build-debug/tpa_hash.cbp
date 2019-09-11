@@ -83,10 +83,22 @@
 		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/hash.c">
 			<Option target="tpa_hash"/>
 		</Unit>
+		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/hashAberto.c">
+			<Option target="tpa_hash"/>
+		</Unit>
+		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/hashFechado.c">
+			<Option target="tpa_hash"/>
+		</Unit>
 		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h">
 			<Option target="tpa_hash"/>
 		</Unit>
 		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h">
+			<Option target="tpa_hash"/>
+		</Unit>
+		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashAberto.h">
+			<Option target="tpa_hash"/>
+		</Unit>
+		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h">
 			<Option target="tpa_hash"/>
 		</Unit>
 		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h">

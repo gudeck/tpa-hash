@@ -25,6 +25,8 @@ Envie aqui o arquivo fonte (.c) contendo o código do seu
 
 #include "headers/main.h"
 #include "headers/hash.h"
+#include "headers/hashAberto.h"
+#include "headers/hashFechado.h"
 
 int main(int argc, char *argv[]) {
 
@@ -34,29 +36,23 @@ int main(int argc, char *argv[]) {
 
     if (arquivo != NULL) {
 
-        HashClientes *hash1 = getHash3(arquivo);
-        ItemCliente *registro, *aux;
-        int j;
+        HashClientes *hash = getHash(arquivo, addFechado, hashDivisao);
 
-        for (int i = 0; i < hash1->tamanho; ++i) {
-            registro = hash1->registro[i];
+        ItemCliente *registro;
+        for (int i = 0; i < hash->tamanho; ++i) {
+            registro = hash->registro[i];
             if (registro == NULL) printf("%d\n", i);
-            else printf("%d %s %f\n", registro->cliente->codigo, registro->cliente->nome, registro->cliente->saldo);
+            else {
+                while (registro != NULL) {
+                    printf("%d - %d %s %f\n", i, registro->cliente->codigo, registro->cliente->nome,
+                           registro->cliente->saldo);
+                    registro = registro->proximo;
+                }
+            }
         }
 
-//        for (int i = 0; i < hash1->tamanho; ++i) {
-//            j = 0;
-//            registro = hash1->registro[i];
-//            if (registro == NULL) printf("%d\n", i);
-//            else {
-//                aux = registro;
-//                while (aux != NULL) {
-//                    printf("%d %d %s %f\n",j++, aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
-//                    aux = aux->proximo;
-//                }
-//            }
-//        }
-
+        printf("\n\n\n%d ", hash->ocupado);
+        printf("%d\n\n\n", hash->tamanho);
 
         fclose(arquivo);
     }

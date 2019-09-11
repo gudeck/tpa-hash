@@ -176,6 +176,60 @@ src/hash.c.s:
 	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hash.c.s
 .PHONY : src/hash.c.s
 
+src/hashAberto.obj: src/hashAberto.c.obj
+
+.PHONY : src/hashAberto.obj
+
+# target to build an object file
+src/hashAberto.c.obj:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj
+.PHONY : src/hashAberto.c.obj
+
+src/hashAberto.i: src/hashAberto.c.i
+
+.PHONY : src/hashAberto.i
+
+# target to preprocess a source file
+src/hashAberto.c.i:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hashAberto.c.i
+.PHONY : src/hashAberto.c.i
+
+src/hashAberto.s: src/hashAberto.c.s
+
+.PHONY : src/hashAberto.s
+
+# target to generate assembly for a file
+src/hashAberto.c.s:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hashAberto.c.s
+.PHONY : src/hashAberto.c.s
+
+src/hashFechado.obj: src/hashFechado.c.obj
+
+.PHONY : src/hashFechado.obj
+
+# target to build an object file
+src/hashFechado.c.obj:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj
+.PHONY : src/hashFechado.c.obj
+
+src/hashFechado.i: src/hashFechado.c.i
+
+.PHONY : src/hashFechado.i
+
+# target to preprocess a source file
+src/hashFechado.c.i:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hashFechado.c.i
+.PHONY : src/hashFechado.c.i
+
+src/hashFechado.s: src/hashFechado.c.s
+
+.PHONY : src/hashFechado.s
+
+# target to generate assembly for a file
+src/hashFechado.c.s:
+	$(MAKE) -f CMakeFiles\tpa_hash.dir\build.make CMakeFiles/tpa_hash.dir/src/hashFechado.c.s
+.PHONY : src/hashFechado.c.s
+
 src/main.obj: src/main.c.obj
 
 .PHONY : src/main.obj
@@ -218,6 +272,12 @@ help:
 	@echo ... src/hash.obj
 	@echo ... src/hash.i
 	@echo ... src/hash.s
+	@echo ... src/hashAberto.obj
+	@echo ... src/hashAberto.i
+	@echo ... src/hashAberto.s
+	@echo ... src/hashFechado.obj
+	@echo ... src/hashFechado.i
+	@echo ... src/hashFechado.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/guzuc/CLionProjects/tpa-hash/src/cliente.c" "C:/Users/guzuc/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/src/cliente.c.obj"
   "C:/Users/guzuc/CLionProjects/tpa-hash/src/hash.c" "C:/Users/guzuc/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/src/hash.c.obj"
+  "C:/Users/guzuc/CLionProjects/tpa-hash/src/hashAberto.c" "C:/Users/guzuc/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj"
+  "C:/Users/guzuc/CLionProjects/tpa-hash/src/hashFechado.c" "C:/Users/guzuc/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj"
   "C:/Users/guzuc/CLionProjects/tpa-hash/src/main.c" "C:/Users/guzuc/CLionProjects/tpa-hash/cmake-build-debug/CMakeFiles/tpa_hash.dir/src/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
