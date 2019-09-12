@@ -36,11 +36,10 @@ void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHa
 
 ItemCliente *buscaRegistroAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
-    int indice, i;
+    int i, indice = funcaoHash(registro, hash);
     bool parar;
     ItemCliente *aux;
 
-    indice = funcaoHash(registro, hash);
     if (indice < 0 || !hash->registro[indice]) {
         printf("\nO registro procurado nao foi encontrado");
         return NULL;

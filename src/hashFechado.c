@@ -45,13 +45,14 @@ ItemCliente *buscaRegistroFechado(HashClientes *hash, ItemCliente *registro, Fun
         return NULL;
     }
     aux = hash->registro[indice];
-    while (aux != NULL) {
-        if (aux->cliente->codigo == registro->cliente->codigo) break;
-        aux = aux->proximo;
-    }
     if (aux == NULL) {
         printf("\nO registro procurado nao foi encontrado");
         return NULL;
+    }
+    while (aux != NULL) {
+        if (aux->cliente->codigo == registro->cliente->codigo)
+            break;
+        aux = aux->proximo;
     }
     return aux;
 }

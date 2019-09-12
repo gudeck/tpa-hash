@@ -2,27 +2,6 @@
 // Created by 2017122760013 on 09/09/2019.
 //
 
-
-/*
- Crie uma estrutura de dados que seja possível armazenar os dados gerados pelo aplicativo fornecido pelo professor
- e seja possível Adicionar, Pesquisar e Remover um elemento. Desenvolva Utilizando:
-
-Hashing aberta com tamanho inicial 500 e load factor > 70%, dobre o tamanho da estrutura a cada crescimento
- e utilize a função de divisão para inserir os elementos na registro (2 Ponto).
-Replique a estrutura acima utilizando uma função de dobra (1 Ponto)
-Hashing Fechado (1 Ponto). //Só função de divisão
-No fim de cada leitura do arquivo, cada algoritmo deve retornar uma lista contendo o número de elementos inseridos,
- o número de colisões ocorridas e o número de colisões por posição (1 Ponto).
-
-Para gerar esse arquivo faça uma varredura na registro, gerando
- uma linha no arquivo para cada registro, separado por ";" (1 Ponto
-
-Gere um relatório do trabalho contendo a analise do
- pior e melhor caso de busca nos 3 algoritmos. (1 Ponto).
-
-Envie aqui o arquivo fonte (.c) contendo o código do seu
- trabalho e o relatório do trabalho compactados em um arquivo zip.*/
-
 #include "headers/main.h"
 #include "headers/hash.h"
 #include "headers/hashAberto.h"
@@ -52,7 +31,7 @@ int main(int argc, char *argv[]) {
     if (arquivo != NULL) {
         HashClientes *hash;
 
-        Cliente *cliente = criaCliente(7500, "G", 13.0);
+        Cliente *cliente = criaCliente(2334, "G", 13.0);
         ItemCliente *registro = criaRegistro(cliente);
 
         hash = getHash(arquivo, addFechado, hashDivisao);
@@ -64,6 +43,7 @@ int main(int argc, char *argv[]) {
 //                printf("\nPosicao %d: %d colisoes", i, hash->registro[i]->colisoesPosicao);
 //        }
 //        mostrarHash(hash);
+//        read(hash, registro, hashDivisao, buscaRegistroFechado);
         fclose(arquivo);
     }
     return 0;
