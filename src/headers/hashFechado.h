@@ -9,8 +9,13 @@
 
 void addFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash);
 
+void expandeFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash);
+
 void readFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
 
+ItemCliente *buscaRegistroFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+
 void deleteFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+
 
 #endif //TPA_HASH_HASHFECHADO_H

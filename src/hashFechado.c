@@ -7,85 +7,57 @@
 void addFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
 
     int indice = funcaoHash(novoRegistro, hash);
-
     ItemCliente *registro = hash->registro[indice];
 
     if (registro == NULL)
         hash->registro[indice] = novoRegistro;
     else {
-        while (registro->proximo != NULL) {
-            if (registro->proximo->excluido)break;
-
-            registro = registro->proximo;
-        }
-
+        while (registro->proximo != NULL) registro = registro->proximo;
         registro->proximo = novoRegistro;
-        registro->proximo->excluido = false;
-        registro->proximo->proximo = NULL;
+        novoRegistro->anterior = registro;
     }
+    hash->ocupado++;
+}
 
-    if (!hash->registro[indice]->excluido)
-        hash->ocupado++;
-
+void expandeFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
+    int indice = funcaoHash(novoRegistro, hash);
+    hash->registro[indice] = novoRegistro;
 }
 
 void readFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
-
-    int indice = funcaoHash(registro, hash);
-
-    if (indice < 0) {
-        printf("O registro procurado nao foi encontrado\n");
-        return;
-    }
-
-    ItemCliente *aux = hash->registro[indice];
-
-    while (aux != NULL) {
-        if (aux->excluido) {
-            aux = aux->proximo;
-            continue;
-        }
-
-        if (aux->cliente->codigo == registro->cliente->codigo) break;
-
-        aux = aux->proximo;
-    }
-
-    if (aux == NULL)
-        printf("O registro procurado nao foi encontrado\n");
-    else
-        printf("Os dados solicitados foram: %d %s %f\n", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
+    ItemCliente *aux = buscaRegistroFechado(hash, registro, funcaoHash);
+    if (aux != NULL)
+        printf("\nOs dados solicitados foram: %d %s %f", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
 }
 
 void deleteFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
-    int indice = funcaoHash(registro, hash);
-
-    if (indice < 0) {
-        printf("O registro procurado nao foi encontrado\n");
-        return;
+    ItemCliente *aux = buscaRegistroFechado(hash, registro, funcaoHash);
+    if (aux != NULL) {
+        printf("\nOs dados do cliente de codigo %d foram excluidos", aux->cliente->codigo);
+        excluiRegistro(aux);
     }
+}
 
-    ItemCliente *aux = hash->registro[indice];
+ItemCliente *buscaRegistroFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
+    int indice = funcaoHash(registro, hash);
+    ItemCliente *aux;
+
+    if (indice < 0 || !hash->registro[indice]) {
+        printf("\nO registro procurado nao foi encontrado");
+        return NULL;
+    }
+    aux = hash->registro[indice];
     while (aux != NULL) {
         if (aux->cliente->codigo == registro->cliente->codigo) break;
-
-        if (aux->excluido) {
-            aux = aux->proximo;
-            continue;
-        }
         aux = aux->proximo;
     }
-
-    if (aux == NULL)
-        printf("O registro procurado nao foi encontrado\n");
-    else {
-        printf("Os dados do cliente de codigo %d foram excluidos\n", aux->cliente->codigo);
-
-        aux->cliente = NULL;
-        aux->excluido = true;
+    if (aux == NULL) {
+        printf("\nO registro procurado nao foi encontrado");
+        return NULL;
     }
+    return aux;
 }
 
 

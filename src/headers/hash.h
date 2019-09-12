@@ -38,8 +38,7 @@ HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, Fun
 
     HashClientes *novaHash = criaHash(hash->tamanho * 2, hash->loadFactor);
     ItemCliente *registro;
-    printf("\n\n\n%d ", hash->ocupado);
-    printf("%d %d\n\n\n", hash->tamanho, novaHash->tamanho);
+    printf("\n\n\n%d %d %d", hash->ocupado, hash->tamanho, novaHash->tamanho);
     for (int i = 0; i < hash->tamanho; ++i) {
         registro = hash->registro[i];
         if (registro != NULL) {

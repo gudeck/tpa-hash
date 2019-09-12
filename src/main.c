@@ -28,6 +28,48 @@ Envie aqui o arquivo fonte (.c) contendo o código do seu
 #include "headers/hashAberto.h"
 #include "headers/hashFechado.h"
 
+void testeAberto(HashClientes *hash, ItemCliente *registro) {
+
+    printf("\n\n\n%d %d\n\n", hash->ocupado, hash->tamanho);
+
+    readAberto(hash, registro, hashDivisao);
+    deleteAberto(hash, registro, hashDivisao);
+    readAberto(hash, registro, hashDivisao);
+    addAberto(hash, registro, hashDivisao);
+    readAberto(hash, registro, hashDivisao);
+    deleteAberto(hash, registro, hashDivisao);
+    readAberto(hash, registro, hashDivisao);
+
+}
+
+void testeFechado(HashClientes *hash, ItemCliente *registro) {
+    printf("\n\n\n%d %d\n\n", hash->ocupado, hash->tamanho);
+
+    readFechado(hash, registro, hashDivisao);
+    deleteFechado(hash, registro, hashDivisao);
+    readFechado(hash, registro, hashDivisao);
+    addFechado(hash, registro, hashDivisao);
+    readFechado(hash, registro, hashDivisao);
+    deleteFechado(hash, registro, hashDivisao);
+    readFechado(hash, registro, hashDivisao);
+
+}
+
+void mostrarHash(HashClientes *hash) {
+    ItemCliente *registro;
+    for (int i = 0; i < hash->tamanho; ++i) {
+        registro = hash->registro[i];
+        if (registro == NULL) printf("\n%d", i);
+        else {
+            while (registro != NULL) {
+                printf("\n%d - %d %s %f", i, registro->cliente->codigo, registro->cliente->nome,
+                       registro->cliente->saldo);
+                registro = registro->proximo;
+            }
+        }
+    }
+}
+
 int main(int argc, char *argv[]) {
 
     setlocale(LC_ALL, NULL);
@@ -35,28 +77,18 @@ int main(int argc, char *argv[]) {
     FILE *arquivo = fopen("../DadosBancoPulini.txt", "r");
 
     if (arquivo != NULL) {
-
-        HashClientes *hash = getHash(arquivo, addFechado, hashDivisao);
-
+        Cliente *cliente;
         ItemCliente *registro;
-        for (int i = 0; i < hash->tamanho; ++i) {
-            registro = hash->registro[i];
-            if (registro == NULL) printf("%d\n", i);
-            else {
-                while (registro != NULL) {
-                    printf("%d - %d %s %f\n", i, registro->cliente->codigo, registro->cliente->nome,
-                           registro->cliente->saldo);
-                    registro = registro->proximo;
-                }
-            }
-        }
+        HashClientes *hash;
 
-        printf("\n\n\n%d ", hash->ocupado);
-        printf("%d\n\n\n", hash->tamanho);
-
+        cliente = criaCliente(497, "G", 000.00);
+        registro = criaRegistro(cliente);
+        hash = getHash(arquivo, addFechado, hashDivisao);
+//        hash = getHash(arquivo, addAberto, hashDivisao);
+        printf("\n\n\n%d %d\n\n", hash->ocupado, hash->tamanho);
+        mostrarHash(hash);
         fclose(arquivo);
     }
-
     return 0;
 }
 
@@ -69,6 +101,5 @@ char *removeCaractere(char *string, char caractere) {
             }
         }
     }
-
     return string;
 }
