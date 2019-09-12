@@ -74,9 +74,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/DadosBancoPulini.txt">
-			<Option target="tpa_hash"/>
-		</Unit>
 		<Unit filename="C:/Users/guzuc/CLionProjects/tpa-hash/src/cliente.c">
 			<Option target="tpa_hash"/>
 		</Unit>

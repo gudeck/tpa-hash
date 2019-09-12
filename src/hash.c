@@ -9,6 +9,7 @@ HashClientes *criaHash(int tamanho, double loadFactor) {
 
     HashClientes *novaHash = (HashClientes *) calloc(1, sizeof(HashClientes));
 
+    novaHash->colisoesTotal = 0;
     novaHash->ocupado = 0;
     novaHash->tamanho = tamanho;
     novaHash->loadFactor = loadFactor;
@@ -26,6 +27,7 @@ HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, Fun
         if (registro != NULL && !registro->excluido)
             funcaoInsercao(novaHash, registro, funcaoHash);
     }
+    novaHash->colisoesTotal = hash->colisoesTotal;
     novaHash->ocupado = hash->ocupado;
     free(hash);
     return novaHash;

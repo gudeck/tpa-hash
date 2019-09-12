@@ -20,6 +20,7 @@ ItemCliente *criaRegistro(Cliente *cliente) {
     ItemCliente *novoRegistro = (ItemCliente *) calloc(1, sizeof(ItemCliente));
 
     novoRegistro->cliente = cliente;
+    novoRegistro->colisoesPosicao = 0;
     novoRegistro->excluido = false;
     novoRegistro->anterior = NULL;
     novoRegistro->proximo = NULL;

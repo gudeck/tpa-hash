@@ -10,6 +10,10 @@ void addAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoH
 
     while (hash->registro[indice] != NULL) {
         if (hash->registro[indice]->excluido)break;
+        else {
+            hash->colisoesTotal++;
+            hash->registro[indice]->colisoesPosicao++;
+        }
         if (indice < hash->tamanho) indice++;
         else indice = 0;
     }

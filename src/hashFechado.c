@@ -12,6 +12,8 @@ void addFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcao
     if (registro == NULL)
         hash->registro[indice] = novoRegistro;
     else {
+        hash->colisoesTotal++;
+        hash->registro[indice]->colisoesPosicao++;
         while (registro->proximo != NULL) registro = registro->proximo;
         registro->proximo = novoRegistro;
         novoRegistro->anterior = registro;

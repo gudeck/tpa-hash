@@ -85,7 +85,11 @@ int main(int argc, char *argv[]) {
         registro = criaRegistro(cliente);
         hash = getHash(arquivo, addFechado, hashDivisao);
 //        hash = getHash(arquivo, addAberto, hashDivisao);
-        printf("\n\n\n%d %d\n\n", hash->ocupado, hash->tamanho);
+        printf("\n\n\n%d %d\n\n", hash->colisoesTotal, hash->ocupado);
+        for (int i = 0; i < hash->tamanho; ++i) {
+            if (hash->registro[i] && hash->registro[i]->colisoesPosicao > 0)
+                printf("\nPosicao %d: %d colisoes", i, hash->registro[i]->colisoesPosicao);
+        }
         mostrarHash(hash);
         fclose(arquivo);
     }

@@ -10,11 +10,12 @@
 
 
 typedef struct {
-    int tamanho;
-    int ocupado;
     double loadFactor;
+    int colisoesTotal;
+    int ocupado;
+    int tamanho;
     ItemCliente **registro;
-} HashClientes, Hasahd;
+} HashClientes;
 
 typedef int (*FuncaoHash)(ItemCliente *, HashClientes *);
 
@@ -33,27 +34,4 @@ int hashDobra(ItemCliente *registro, HashClientes hash);
 
 bool isAvailable(HashClientes *hash);
 
-/*
-HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
-
-    HashClientes *novaHash = criaHash(hash->tamanho * 2, hash->loadFactor);
-    ItemCliente *registro;
-    printf("\n\n\n%d %d %d", hash->ocupado, hash->tamanho, novaHash->tamanho);
-    for (int i = 0; i < hash->tamanho; ++i) {
-        registro = hash->registro[i];
-        if (registro != NULL) {
-            while (registro != NULL) {
-
-                registro->excluido = false;
-                funcaoInsercao(novaHash, registro, funcaoHash);
-
-                registro = registro->proximo;
-            }
-        }
-
-    }
-
-    free(hash);
-    return novaHash;
-}*/
 #endif //TPA_HASH_HASH_H
