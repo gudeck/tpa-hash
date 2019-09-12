@@ -19,6 +19,8 @@ typedef struct {
 
 typedef int (*FuncaoHash)(ItemCliente *, HashClientes *);
 
+typedef ItemCliente *(*FuncaoPesquisa)(HashClientes *, ItemCliente *, FuncaoHash);
+
 typedef void (*FuncaoInsercao)(HashClientes *, ItemCliente *, FuncaoHash);
 
 
@@ -30,8 +32,10 @@ HashClientes *getHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash f
 
 int hashDivisao(ItemCliente *registro, HashClientes *hash);
 
-int hashDobra(ItemCliente *registro, HashClientes hash);
+int hashDobra(ItemCliente *registro, HashClientes *hash);
 
 bool isAvailable(HashClientes *hash);
+
+void read(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa);
 
 #endif //TPA_HASH_HASH_H

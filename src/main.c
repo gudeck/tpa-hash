@@ -52,14 +52,18 @@ int main(int argc, char *argv[]) {
     if (arquivo != NULL) {
         HashClientes *hash;
 
+        Cliente *cliente = criaCliente(7500, "G", 13.0);
+        ItemCliente *registro = criaRegistro(cliente);
+
         hash = getHash(arquivo, addFechado, hashDivisao);
 //        hash = getHash(arquivo, addAberto, hashDivisao);
+//        read(hash, registro, hashDivisao, buscaRegistroFechado);
         printf("\n\n\n%d %d\n\n", hash->colisoesTotal, hash->ocupado);
-        for (int i = 0; i < hash->tamanho; ++i) {
-            if (hash->registro[i] && hash->registro[i]->colisoesPosicao > 0)
-                printf("\nPosicao %d: %d colisoes", i, hash->registro[i]->colisoesPosicao);
-        }
-        mostrarHash(hash);
+//        for (int i = 0; i < hash->tamanho; ++i) {
+//            if (hash->registro[i] && hash->registro[i]->colisoesPosicao > 0)
+//                printf("\nPosicao %d: %d colisoes", i, hash->registro[i]->colisoesPosicao);
+//        }
+//        mostrarHash(hash);
         fclose(arquivo);
     }
     return 0;

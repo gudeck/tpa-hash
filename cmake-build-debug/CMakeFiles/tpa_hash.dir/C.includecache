@@ -6,43 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/guzuc/CLionProjects/tpa-hash/src/cliente.c
-headers/cliente.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
-
-C:/Users/guzuc/CLionProjects/tpa-hash/src/hash.c
-headers/hash.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
-headers/hashFechado.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
-
-C:/Users/guzuc/CLionProjects/tpa-hash/src/hashAberto.c
-headers/hashAberto.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashAberto.h
-
-C:/Users/guzuc/CLionProjects/tpa-hash/src/hashFechado.c
-headers/hashFechado.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
-
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/cliente.h
 main.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/main.h
 
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hash.h
 main.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/main.h
 cliente.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/cliente.h
 
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashAberto.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hashAberto.h
 hash.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hash.h
 
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hashFechado.h
 hash.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hash.h
 
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/main.h
 locale.h
 -
 stdio.h
@@ -54,13 +36,13 @@ string.h
 stdbool.h
 -
 
-C:/Users/guzuc/CLionProjects/tpa-hash/src/main.c
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/main.c
 headers/main.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/main.h
 headers/hash.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hash.h
 headers/hashAberto.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashAberto.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hashAberto.h
 headers/hashFechado.h
-C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
+C:/Users/2017122760013/CLionProjects/tpa-hash/src/headers/hashFechado.h
 

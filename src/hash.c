@@ -65,8 +65,7 @@ int hashDivisao(ItemCliente *registro, HashClientes *hash) {
     return registro->cliente->codigo % hash->tamanho;
 }
 
-int hashDobra(ItemCliente *registro, HashClientes hash) {
-
+int hashDobra(ItemCliente *registro, HashClientes *hash) {
 
     return 0;
 }
@@ -75,6 +74,11 @@ bool isAvailable(HashClientes *hash) {
     return hash->ocupado * 1.0 < ((hash->tamanho * 1.0) * hash->loadFactor);
 }
 
+void read(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa) {
+    ItemCliente *aux = funcaoPesquisa(hash, registro, funcaoHash);
+    if (aux != NULL)
+        printf("\nOs dados solicitados foram: %d %s %f", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
+}
 
 
 

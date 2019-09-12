@@ -34,25 +34,19 @@ void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHa
     }
 }
 
-void readAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
-
-    ItemCliente *aux = buscaRegistroAberto(hash, registro, funcaoHash);
-
-    if (aux != NULL)
-        printf("\nOs dados solicitados foram: %d %s %f", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
-}
-
 ItemCliente *buscaRegistroAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
     int indice, i;
-    bool parar = false;
+    bool parar;
     ItemCliente *aux;
 
-    i = indice = funcaoHash(registro, hash);
+    indice = funcaoHash(registro, hash);
     if (indice < 0 || !hash->registro[indice]) {
         printf("\nO registro procurado nao foi encontrado");
         return NULL;
     }
+    i = indice;
+    parar = false;
     while (i != indice && !parar) {
         if (hash->registro[i] != NULL)
             if (hash->registro[i]->cliente != NULL)

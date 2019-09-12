@@ -31,13 +31,8 @@ void deleteFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoH
             aux->proximo->colisoesPosicao = aux->colisoesPosicao;
         }
         excluiRegistro(aux);
+        hash->ocupado--;
     }
-}
-
-void readFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
-    ItemCliente *aux = buscaRegistroFechado(hash, registro, funcaoHash);
-    if (aux != NULL)
-        printf("\nOs dados solicitados foram: %d %s %f", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
 }
 
 ItemCliente *buscaRegistroFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
