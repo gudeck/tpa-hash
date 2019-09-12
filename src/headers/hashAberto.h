@@ -9,10 +9,10 @@
 
 void addAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash);
 
+void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+
 void readAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
 
 ItemCliente *buscaRegistroAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
-
-void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
 
 #endif //TPA_HASH_HASHABERTO_H

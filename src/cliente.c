@@ -27,7 +27,7 @@ ItemCliente *criaRegistro(Cliente *cliente) {
     return novoRegistro;
 }
 
-void *excluiRegistro(ItemCliente *registro) {
+void excluiRegistro(ItemCliente *registro) {
 
     if (registro->anterior != NULL)
         registro->anterior->proximo = registro->proximo;

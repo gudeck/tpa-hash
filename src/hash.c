@@ -3,7 +3,6 @@
 //
 
 #include "headers/hash.h"
-#include "headers/hashFechado.h"
 
 HashClientes *criaHash(int tamanho, double loadFactor) {
 

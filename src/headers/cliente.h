@@ -14,16 +14,17 @@ typedef struct structCliente {
 } Cliente;
 
 typedef struct structItemCliente {
-    bool excluido;
     Cliente *cliente;
+    bool excluido;
     int colisoesPosicao;
     struct structItemCliente *anterior, *proximo;
 } ItemCliente;
 
-ItemCliente *criaRegistro(Cliente *cliente);
-
-void *excluiRegistro(ItemCliente *registro);
 
 Cliente *criaCliente(int codigo, char *nome, double saldo);
+
+ItemCliente *criaRegistro(Cliente *cliente);
+
+void excluiRegistro(ItemCliente *registro);
 
 #endif //TPA_HASH_CLIENTE_H
