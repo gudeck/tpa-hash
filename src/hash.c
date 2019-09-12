@@ -23,14 +23,8 @@ HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, Fun
 
     for (int i = 0; i < hash->tamanho; ++i) {
         registro = hash->registro[i];
-        while (registro != NULL) {
-            registro->excluido = false;
-            if (funcaoInsercao == addFechado)
-                expandeFechado(novaHash, registro, funcaoHash);
-            else
-                funcaoInsercao(novaHash, registro, funcaoHash);
-            registro = registro->proximo;
-        }
+        if (registro != NULL && !registro->excluido)
+            funcaoInsercao(novaHash, registro, funcaoHash);
     }
     novaHash->ocupado = hash->ocupado;
     free(hash);

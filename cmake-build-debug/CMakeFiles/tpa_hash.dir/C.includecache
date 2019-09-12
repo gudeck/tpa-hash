@@ -9,6 +9,12 @@
 C:/Users/guzuc/CLionProjects/tpa-hash/src/hash.c
 headers/hash.h
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
+headers/hashFechado.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
+
+C:/Users/guzuc/CLionProjects/tpa-hash/src/hashFechado.c
+headers/hashFechado.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
 
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
 main.h
@@ -19,6 +25,10 @@ main.h
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
 cliente.h
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/cliente.h
+
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hashFechado.h
+hash.h
+C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/hash.h
 
 C:/Users/guzuc/CLionProjects/tpa-hash/src/headers/main.h
 locale.h

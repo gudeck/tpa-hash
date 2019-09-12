@@ -19,11 +19,6 @@ void addFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcao
     hash->ocupado++;
 }
 
-void expandeFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
-    int indice = funcaoHash(novoRegistro, hash);
-    hash->registro[indice] = novoRegistro;
-}
-
 void readFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
     ItemCliente *aux = buscaRegistroFechado(hash, registro, funcaoHash);
     if (aux != NULL)
