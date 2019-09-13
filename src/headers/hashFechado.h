@@ -8,10 +8,10 @@
 #include "hash.h"
 #include "cliente.h"
 
-void adicionarFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash);
+void adicionarFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoCalculo funcaoHash);
 
-void excluirFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+void excluirFechado(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash);
 
-ItemCliente *buscarFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+ItemCliente *buscarFechado(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash);
 
 #endif //TPA_HASH_HASHFECHADO_H

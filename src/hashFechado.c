@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "headers/hashFechado.h"
 
-void adicionarFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
+void adicionarFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoCalculo funcaoHash) {
 
     int indice = funcaoHash(novoRegistro, hash);
     ItemCliente *registro = hash->registro[indice];
@@ -22,7 +22,7 @@ void adicionarFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash 
     hash->ocupado++;
 }
 
-void excluirFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+void excluirFechado(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash) {
 
     ItemCliente *aux = buscarFechado(hash, registro, funcaoHash);
     if (aux != NULL) {
@@ -36,7 +36,7 @@ void excluirFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcao
     }
 }
 
-ItemCliente *buscarFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+ItemCliente *buscarFechado(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash) {
 
     int indice = funcaoHash(registro, hash);
     ItemCliente *aux;

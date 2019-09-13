@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include "headers/hashAberto.h"
 
-void adicionarAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
+void adicionarAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoCalculo funcaoHash) {
 
     int indice = funcaoHash(novoRegistro, hash);
 
@@ -25,7 +25,7 @@ void adicionarAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash f
     hash->registro[indice]->excluido = false;
 }
 
-void excluirAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+void excluirAberto(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash) {
 
     ItemCliente *aux = buscarAberto(hash, registro, funcaoHash);
 
@@ -36,7 +36,7 @@ void excluirAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoH
     }
 }
 
-ItemCliente *buscarAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+ItemCliente *buscarAberto(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash) {
 
     int i;
     int indice = funcaoHash(registro, hash);
@@ -52,7 +52,7 @@ ItemCliente *buscarAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash 
     while (i != indice && !parar) {
         if (hash->registro[i] != NULL)
             if (hash->registro[i]->cliente != NULL)
-                if (hash->registro[i]->cliente->codigo != registro->cliente->codigo)
+                if (hash->registro[i]->cliente->codigo == registro->cliente->codigo)
                     break;
         if (i < hash->tamanho) i++;
         else {

@@ -16,18 +16,18 @@ typedef struct {
     ItemCliente **registro;
 } HashClientes;
 
-typedef int (*FuncaoHash)(ItemCliente *, HashClientes *);
+typedef int (*FuncaoCalculo)(ItemCliente *, HashClientes *);
 
-typedef ItemCliente *(*FuncaoPesquisa)(HashClientes *, ItemCliente *, FuncaoHash);
+typedef ItemCliente *(*FuncaoBuscar)(HashClientes *, ItemCliente *, FuncaoCalculo);
 
-typedef void (*FuncaoInsercao)(HashClientes *, ItemCliente *, FuncaoHash);
+typedef void (*FuncaoInsercao)(HashClientes *, ItemCliente *, FuncaoCalculo);
 
 
 HashClientes *criarHash(int tamanho, double loadFactor);
 
-HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
+HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoCalculo funcaoHash);
 
-HashClientes *preencherHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
+HashClientes *preencherHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoCalculo funcaoHash);
 
 int formulaDivisao(ItemCliente *registro, HashClientes *hash);
 
@@ -35,6 +35,6 @@ int formulaDivisao(ItemCliente *registro, HashClientes *hash);
 
 bool inserirDisponivel(HashClientes *hash);
 
-void buscar(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa);
+void buscar(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash, FuncaoBuscar funcaoPesquisa);
 
 #endif //TPA_HASH_HASH_H

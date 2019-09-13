@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "headers/main.h"
 #include "headers/hashFechado.h"
+#include "headers/hashAberto.h"
 
 int main(int argc, char *argv[]) {
 
@@ -14,9 +15,10 @@ int main(int argc, char *argv[]) {
     FILE *arquivo = fopen("../DadosBancoPulini.txt", "r");
 
     if (arquivo != NULL) {
-        HashClientes *hash = preencherHash(arquivo, adicionarFechado, formulaDivisao);
+        HashClientes *hash = preencherHash(arquivo, adicionarAberto, formulaDivisao);
 
         mostrarHash(hash);
+        buscar(hash, criarRegistro(criarCliente(3082, "g", 4.0)), formulaDivisao, buscarAberto);
 
         fclose(arquivo);
     }

@@ -19,7 +19,7 @@ HashClientes *criarHash(int tamanho, double loadFactor) {
     return novaHash;
 }
 
-HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
+HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoCalculo funcaoHash) {
 
     HashClientes *novaHash = criarHash(hash->tamanho * 2, hash->loadFactor);
     ItemCliente *registro;
@@ -35,7 +35,7 @@ HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, Fu
     return novaHash;
 }
 
-HashClientes *preencherHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
+HashClientes *preencherHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoCalculo funcaoHash) {
     rewind(arquivo);
 
     HashClientes *hash = criarHash(500, 0.7);
@@ -80,7 +80,7 @@ bool inserirDisponivel(HashClientes *hash) {
     return hash->ocupado * 1.0 < ((hash->tamanho * 1.0) * hash->loadFactor);
 }
 
-void buscar(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa) {
+void buscar(HashClientes *hash, ItemCliente *registro, FuncaoCalculo funcaoHash, FuncaoBuscar funcaoPesquisa) {
     ItemCliente *aux = funcaoPesquisa(hash, registro, funcaoHash);
     if (aux != NULL)
         printf("\nOs dados solicitados foram: %d %s %f", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);
