@@ -5,7 +5,7 @@
 #ifndef TPA_HASH_CLIENTE_H
 #define TPA_HASH_CLIENTE_H
 
-#include "main.h"
+#include <stdbool.h>
 
 typedef struct structCliente {
     int codigo;
@@ -21,10 +21,10 @@ typedef struct structItemCliente {
 } ItemCliente;
 
 
-Cliente *criaCliente(int codigo, char *nome, double saldo);
+Cliente *criarCliente(int codigo, char *nome, double saldo);
 
-ItemCliente *criaRegistro(Cliente *cliente);
+ItemCliente *criarRegistro(Cliente *cliente);
 
-void excluiRegistro(ItemCliente *registro);
+void excluirRegistro(ItemCliente *registro);
 
 #endif //TPA_HASH_CLIENTE_H

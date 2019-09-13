@@ -6,11 +6,12 @@
 #define TPA_HASH_HASHABERTO_H
 
 #include "hash.h"
+#include "cliente.h"
 
-void addAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash);
+void adicionarAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash);
 
-void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+void excluirAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
 
-ItemCliente *buscaRegistroAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
+ItemCliente *buscarAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash);
 
 #endif //TPA_HASH_HASHABERTO_H

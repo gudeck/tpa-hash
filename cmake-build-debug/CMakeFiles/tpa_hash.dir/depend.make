@@ -3,7 +3,6 @@
 
 CMakeFiles/tpa_hash.dir/src/cliente.c.obj: ../src/cliente.c
 CMakeFiles/tpa_hash.dir/src/cliente.c.obj: ../src/headers/cliente.h
-CMakeFiles/tpa_hash.dir/src/cliente.c.obj: ../src/headers/main.h
 
 CMakeFiles/tpa_hash.dir/src/hash.c.obj: ../src/hash.c
 CMakeFiles/tpa_hash.dir/src/hash.c.obj: ../src/headers/cliente.h
@@ -14,17 +13,14 @@ CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj: ../src/hashAberto.c
 CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj: ../src/headers/cliente.h
 CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj: ../src/headers/hash.h
 CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj: ../src/headers/hashAberto.h
-CMakeFiles/tpa_hash.dir/src/hashAberto.c.obj: ../src/headers/main.h
 
 CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj: ../src/hashFechado.c
 CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj: ../src/headers/cliente.h
 CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj: ../src/headers/hash.h
 CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj: ../src/headers/hashFechado.h
-CMakeFiles/tpa_hash.dir/src/hashFechado.c.obj: ../src/headers/main.h
 
 CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/headers/cliente.h
 CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/headers/hash.h
-CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/headers/hashAberto.h
 CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/headers/hashFechado.h
 CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/headers/main.h
 CMakeFiles/tpa_hash.dir/src/main.c.obj: ../src/main.c

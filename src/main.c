@@ -2,10 +2,48 @@
 // Created by 2017122760013 on 09/09/2019.
 //
 
+#include <locale.h>
+#include <stdio.h>
 #include "headers/main.h"
-#include "headers/hash.h"
-#include "headers/hashAberto.h"
 #include "headers/hashFechado.h"
+
+int main(int argc, char *argv[]) {
+
+    setlocale(LC_ALL, NULL);
+
+    FILE *arquivo = fopen("../DadosBancoPulini.txt", "r");
+
+    if (arquivo != NULL) {
+        HashClientes *hash = preencherHash(arquivo, adicionarFechado, formulaDivisao);
+
+        mostrarHash(hash);
+
+        fclose(arquivo);
+    }
+    return 0;
+}
+
+char *removerCaractere(char *string, char caractere) {
+    for (int i = 0; string[i] != '\0'; i++) {
+        if (string[i] == caractere) {
+            for (int j = i; string[j] != '\0'; ++j) {
+                string[j] = string[j + 1];
+            }
+        }
+    }
+    return string;
+}
+
+void gerarArquivoCSV(HashClientes *hash) {
+    FILE *csv = fopen("../relatorioColisoes.csv", "w+");
+    fprintf(csv, "Posição;Número de Colisões\n");
+    for (int i = 0; i < hash->tamanho; ++i) {
+        if (hash->registro[i] && hash->registro[i]->colisoesPosicao > 0)
+            fprintf(csv, "%d;%d\n", i, hash->registro[i]->colisoesPosicao);
+    }
+    fprintf(csv, "\nTotal:;%d", hash->colisoesTotal);
+    fclose(csv);
+}
 
 void mostrarHash(HashClientes *hash) {
     ItemCliente *registro;
@@ -20,43 +58,4 @@ void mostrarHash(HashClientes *hash) {
             }
         }
     }
-}
-
-int main(int argc, char *argv[]) {
-
-    setlocale(LC_ALL, NULL);
-
-    FILE *arquivo = fopen("../DadosBancoPulini.txt", "r");
-
-    if (arquivo != NULL) {
-        HashClientes *hash;
-
-        Cliente *cliente = criaCliente(2334, "G", 13.0);
-        ItemCliente *registro = criaRegistro(cliente);
-
-        hash = getHash(arquivo, addFechado, hashDivisao);
-//        hash = getHash(arquivo, addAberto, hashDivisao);
-//        read(hash, registro, hashDivisao, buscaRegistroFechado);
-        printf("\n\n\n%d %d\n\n", hash->colisoesTotal, hash->ocupado);
-//        for (int i = 0; i < hash->tamanho; ++i) {
-//            if (hash->registro[i] && hash->registro[i]->colisoesPosicao > 0)
-//                printf("\nPosicao %d: %d colisoes", i, hash->registro[i]->colisoesPosicao);
-//        }
-//        mostrarHash(hash);
-//        read(hash, registro, hashDivisao, buscaRegistroFechado);
-        fclose(arquivo);
-    }
-    return 0;
-}
-
-char *removeCaractere(char *string, char caractere) {
-
-    for (int i = 0; string[i] != '\0'; i++) {
-        if (string[i] == caractere) {
-            for (int j = i; string[j] != '\0'; ++j) {
-                string[j] = string[j + 1];
-            }
-        }
-    }
-    return string;
 }

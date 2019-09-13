@@ -2,9 +2,11 @@
 // Created by guzuc on 09/09/2019.
 //
 
+#include <stdlib.h>
+#include <string.h>
 #include "headers/cliente.h"
 
-Cliente *criaCliente(int codigo, char *nome, double saldo) {
+Cliente *criarCliente(int codigo, char *nome, double saldo) {
 
     Cliente *novoCliente = (Cliente *) calloc(1, sizeof(Cliente));
     novoCliente->nome = (char *) calloc(strlen(nome) + 1, sizeof(char));
@@ -15,7 +17,7 @@ Cliente *criaCliente(int codigo, char *nome, double saldo) {
     return novoCliente;
 }
 
-ItemCliente *criaRegistro(Cliente *cliente) {
+ItemCliente *criarRegistro(Cliente *cliente) {
 
     ItemCliente *novoRegistro = (ItemCliente *) calloc(1, sizeof(ItemCliente));
 
@@ -27,7 +29,7 @@ ItemCliente *criaRegistro(Cliente *cliente) {
     return novoRegistro;
 }
 
-void excluiRegistro(ItemCliente *registro) {
+void excluirRegistro(ItemCliente *registro) {
 
     if (registro->anterior != NULL)
         registro->anterior->proximo = registro->proximo;

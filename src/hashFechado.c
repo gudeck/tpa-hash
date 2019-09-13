@@ -2,9 +2,10 @@
 // Created by guzuc on 11/09/2019.
 //
 
+#include <stdio.h>
 #include "headers/hashFechado.h"
 
-void addFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
+void adicionarFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
 
     int indice = funcaoHash(novoRegistro, hash);
     ItemCliente *registro = hash->registro[indice];
@@ -21,21 +22,21 @@ void addFechado(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcao
     hash->ocupado++;
 }
 
-void deleteFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+void excluirFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
-    ItemCliente *aux = buscaRegistroFechado(hash, registro, funcaoHash);
+    ItemCliente *aux = buscarFechado(hash, registro, funcaoHash);
     if (aux != NULL) {
         printf("\nOs dados do cliente de codigo %d foram excluidos", aux->cliente->codigo);
         if (!aux->anterior) {
             hash->registro[funcaoHash(registro, hash)] = aux->proximo;
             aux->proximo->colisoesPosicao = aux->colisoesPosicao;
         }
-        excluiRegistro(aux);
+        excluirRegistro(aux);
         hash->ocupado--;
     }
 }
 
-ItemCliente *buscaRegistroFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+ItemCliente *buscarFechado(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
     int indice = funcaoHash(registro, hash);
     ItemCliente *aux;

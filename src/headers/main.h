@@ -5,12 +5,12 @@
 #ifndef TPA_HASH_MAIN_H
 #define TPA_HASH_MAIN_H
 
-#include <locale.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include "hash.h"
 
-char *removeCaractere(char *string, char caractere);
+char *removerCaractere(char *string, char caractere);
+
+void gerarArquivoCSV(HashClientes *hash);
+
+void mostrarHash(HashClientes *hash);
 
 #endif //TPA_HASH_MAIN_H

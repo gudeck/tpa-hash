@@ -2,9 +2,12 @@
 // Created by guzuc on 09/09/2019.
 //
 
+#include <stdlib.h>
+#include <string.h>
 #include "headers/hash.h"
+#include "headers/main.h"
 
-HashClientes *criaHash(int tamanho, double loadFactor) {
+HashClientes *criarHash(int tamanho, double loadFactor) {
 
     HashClientes *novaHash = (HashClientes *) calloc(1, sizeof(HashClientes));
 
@@ -16,9 +19,9 @@ HashClientes *criaHash(int tamanho, double loadFactor) {
     return novaHash;
 }
 
-HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
+HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
 
-    HashClientes *novaHash = criaHash(hash->tamanho * 2, hash->loadFactor);
+    HashClientes *novaHash = criarHash(hash->tamanho * 2, hash->loadFactor);
     ItemCliente *registro;
 
     for (int i = 0; i < hash->tamanho; ++i) {
@@ -32,49 +35,52 @@ HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, Fun
     return novaHash;
 }
 
-HashClientes *getHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
+HashClientes *preencherHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash) {
     rewind(arquivo);
 
-    HashClientes *hash = criaHash(500, 0.7);
+    HashClientes *hash = criarHash(500, 0.7);
     ItemCliente *novoRegistro;
     Cliente *novoCliente;
-    char *codigoString, *nome, *saldoString, linha[99];
+    char *nome;
+    char linha[99];
+    char *saldoString;
+    char *codigoString;
     int codigo;
     double saldo;
 
     while (fgets(linha, 99, arquivo) != NULL) {
-        if (!isAvailable(hash)) {
-            hash = expandeHash(hash, funcaoInsercao, funcaoHash);
+        if (!inserirDisponivel(hash)) {
+            hash = expandirHash(hash, funcaoInsercao, funcaoHash);
         }
         codigoString = strtok(linha, "|");
         nome = strtok(NULL, "|");
         saldoString = strtok(NULL, "\0");
 
         codigo = strtol(codigoString, NULL, 10);
-        saldo = strtod(removeCaractere(saldoString, '.'), NULL);
+        saldo = strtod(removerCaractere(saldoString, '.'), NULL);
 
-        novoCliente = criaCliente(codigo, nome, saldo);
-        novoRegistro = criaRegistro(novoCliente);
+        novoCliente = criarCliente(codigo, nome, saldo);
+        novoRegistro = criarRegistro(novoCliente);
         funcaoInsercao(hash, novoRegistro, funcaoHash);
     }
     return hash;
 }
 
-int hashDivisao(ItemCliente *registro, HashClientes *hash) {
+int formulaDivisao(ItemCliente *registro, HashClientes *hash) {
     if (registro == NULL || registro->cliente == NULL) return -1;
     return registro->cliente->codigo % hash->tamanho;
 }
 
-int hashDobra(ItemCliente *registro, HashClientes *hash) {
+//int formulaDobra(ItemCliente *registro, HashClientes *hash) {
+//
+//    return 0;
+//}
 
-    return 0;
-}
-
-bool isAvailable(HashClientes *hash) {
+bool inserirDisponivel(HashClientes *hash) {
     return hash->ocupado * 1.0 < ((hash->tamanho * 1.0) * hash->loadFactor);
 }
 
-void read(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa) {
+void buscar(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa) {
     ItemCliente *aux = funcaoPesquisa(hash, registro, funcaoHash);
     if (aux != NULL)
         printf("\nOs dados solicitados foram: %d %s %f", aux->cliente->codigo, aux->cliente->nome, aux->cliente->saldo);

@@ -2,9 +2,11 @@
 // Created by guzuc on 11/09/2019.
 //
 
+#include <stdio.h>
+#include <stdbool.h>
 #include "headers/hashAberto.h"
 
-void addAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
+void adicionarAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoHash) {
 
     int indice = funcaoHash(novoRegistro, hash);
 
@@ -23,9 +25,9 @@ void addAberto(HashClientes *hash, ItemCliente *novoRegistro, FuncaoHash funcaoH
     hash->registro[indice]->excluido = false;
 }
 
-void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+void excluirAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
-    ItemCliente *aux = buscaRegistroAberto(hash, registro, funcaoHash);
+    ItemCliente *aux = buscarAberto(hash, registro, funcaoHash);
 
     if (aux != NULL) {
         printf("\nOs dados do cliente de codigo %d foram excluidos", aux->cliente->codigo);
@@ -34,9 +36,10 @@ void deleteAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHa
     }
 }
 
-ItemCliente *buscaRegistroAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
+ItemCliente *buscarAberto(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash) {
 
-    int i, indice = funcaoHash(registro, hash);
+    int i;
+    int indice = funcaoHash(registro, hash);
     bool parar;
     ItemCliente *aux;
 

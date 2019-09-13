@@ -5,9 +5,8 @@
 #ifndef TPA_HASH_HASH_H
 #define TPA_HASH_HASH_H
 
-#include "main.h"
+#include <stdio.h>
 #include "cliente.h"
-
 
 typedef struct {
     double loadFactor;
@@ -24,18 +23,18 @@ typedef ItemCliente *(*FuncaoPesquisa)(HashClientes *, ItemCliente *, FuncaoHash
 typedef void (*FuncaoInsercao)(HashClientes *, ItemCliente *, FuncaoHash);
 
 
-HashClientes *criaHash(int tamanho, double loadFactor);
+HashClientes *criarHash(int tamanho, double loadFactor);
 
-HashClientes *expandeHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
+HashClientes *expandirHash(HashClientes *hash, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
 
-HashClientes *getHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
+HashClientes *preencherHash(FILE *arquivo, FuncaoInsercao funcaoInsercao, FuncaoHash funcaoHash);
 
-int hashDivisao(ItemCliente *registro, HashClientes *hash);
+int formulaDivisao(ItemCliente *registro, HashClientes *hash);
 
-int hashDobra(ItemCliente *registro, HashClientes *hash);
+//int formulaDobra(ItemCliente *registro, HashClientes *hash);
 
-bool isAvailable(HashClientes *hash);
+bool inserirDisponivel(HashClientes *hash);
 
-void read(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa);
+void buscar(HashClientes *hash, ItemCliente *registro, FuncaoHash funcaoHash, FuncaoPesquisa funcaoPesquisa);
 
 #endif //TPA_HASH_HASH_H
